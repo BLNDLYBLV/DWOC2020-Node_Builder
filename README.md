@@ -27,5 +27,11 @@ npm start
 ## Contributing
 Check the contributing guidelines [here](https://github.com/BLNDLYBLV/DWOC2020-Node_Builder/blob/main/CONTRIBUTING.md)
 
+## Contributers
+- [Sriram](https://github.com/BLNDLYBLV) 
+- [Ajitha Prasad](https://github.com/kelpikz)
+- [Subramaniyam Ganesh](https://github.com/subramaniyam73)
+- [Sailesh](https://github.com/0149Sailesh)
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
