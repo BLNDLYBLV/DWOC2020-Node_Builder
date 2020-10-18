@@ -25,7 +25,7 @@ npm start
 
 
 ## Contributing
-Check the contributing guidelines [here](https://github.com/BLNDLYBLV/DWOC2020-Node_Builder/blob/main/CONTRIBUTING.md)
+Check the contributing guidelines [here](https://github.com/BLNDLYBLV/DWOC2020-Node_Builder/wiki/Contribution-Guidelines)
 
 ## Contributers
 - [Sriram](https://github.com/BLNDLYBLV) 
