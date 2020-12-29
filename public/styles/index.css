@@ -1,5 +1,6 @@
 body{
     font-family: 'Roboto', sans-serif;
+    background-color: rgb(245,245,245);
 }
 .welcome{
     font-family: 'Roboto Mono', monospace;
@@ -22,4 +23,18 @@ body{
     font-size: 30px;
     font-weight: bold;
     
+}
+
+.container{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    /* top: 50%; */
+    /* left: 50%; */
+    /* position: absolute; */
+    /* -webkit-transform: translate(-50%, -50%); */
+    /* transform: translate(-50%, -50%); */
+    width: 80%;
+    padding: 20px;
+    margin: 20px auto;
 }

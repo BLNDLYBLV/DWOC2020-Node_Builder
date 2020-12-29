@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node builder</title>
+    <link rel="stylesheet" href="../public/styles/index.css">
+</head>
+<body>
+    <div class="container">
+        <div style="margin: 10px;">
+            <span>Select folder:</span>
+            <span style="margin: 0px 20px;" id="Path"></span>
+            <button style="float: right;" onclick="chooseFolder()">Choose</button>
+        </div>
+        <div style="margin: 10px;">
+            <label for="projectName">Project name:</label>
+            <input id="projectName" type="text">   
+        </div>
+        <div>
+            <button onclick="next();">Next</button>
+        </div>
+    </div>  
+    <div id="error"></div>
+    <script src="../public/components/details.js"></script>
+</body>
+</html>

@@ -6,6 +6,13 @@ var BrowserWindow = electron.BrowserWindow;
 
 let mainWindow;
 
+// Global variables
+
+var projectPath;
+var projectName;
+
+// Window Init 
+
 function createWindow() {
   mainWindow = new BrowserWindow({
     autoHideMenuBar: true,
@@ -25,18 +32,35 @@ function createWindow() {
   });
 }
 
-// ipcMain.on('redirection',(event,k)=>{
-//   if(k==2){
-//     mainWindow.loadURL(`file://${__dirname}/views/second.html`);
-//     var data=dialog.showOpenDialog(mainWindow,{properties:['openDirectory']});
-//     ipcMain.once('fileDialogReply',data);
-//   }
-// });
+// IPC comms start here
+
+// Choose Btn in details page
+
+ipcMain.on('choose-folder',async (event)=>{
+  var data = await dialog.showOpenDialog(mainWindow,{properties:['openDirectory']});
+  event.sender.send('open-dialog-reply',data);  
+  projectPath=data.filePaths[0];
+});
+
+// Next btn in details page
+
+ipcMain.on('init-details',(event,data)=>{
+  projectName=data.projectName;
+  mainWindow.loadURL(`file://${__dirname}/views/first.html`);
+})
+
+// Takes care of redirecting
+
+ipcMain.on('redirection',(event,k)=>{
+  if(k=="Details"){
+    mainWindow.loadURL(`file://${__dirname}/views/details.html`);
+  }
+});
 
 app.on("ready", createWindow);
-// app.on("browser-window-created", function(e, window) {
-//   window.setMenu(null);
-// });
+app.on("browser-window-created", function(e, window) {
+  window.setMenu(null);
+});
 
 app.on("window-all-closed", function() {
   if (process.platform !== "darwin") {
