@@ -1,0 +1,22 @@
+{
+  "name": "dwoc2020-node_builder",
+  "version": "1.0.0",
+  "description": "Node builder is a desktop app which builds user defined code and file structure for a nodejs project.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BLNDLYBLV/DWOC2020-Node_Builder.git"
+  },
+  "author": "BLNDLYBLV",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BLNDLYBLV/DWOC2020-Node_Builder/issues"
+  },
+  "homepage": "https://github.com/BLNDLYBLV/DWOC2020-Node_Builder#readme",
+  "devDependencies": {
+    "electron": "^11.1.0"
+  }
+}
