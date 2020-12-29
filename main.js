@@ -22,7 +22,7 @@ function createWindow() {
       nodeIntegration: true
     }
   });
-  mainWindow.loadURL(`file://${__dirname}/views/index.html`);
+  mainWindow.loadURL(`file://${__dirname}/views/first.html`);
   mainWindow.webContents.openDevTools();
   mainWindow.on("close", () => {
     mainWindow.webContents.send("stop-server");
@@ -49,18 +49,34 @@ ipcMain.on('init-details',(event,data)=>{
   mainWindow.loadURL(`file://${__dirname}/views/first.html`);
 })
 
-// Takes care of redirecting
-
-ipcMain.on('redirection',(event,k)=>{
-  if(k=="Details"){
-    mainWindow.loadURL(`file://${__dirname}/views/details.html`);
-  }
-});
 
 app.on("ready", createWindow);
 app.on("browser-window-created", function(e, window) {
   window.setMenu(null);
 });
+
+ipcMain.on('redirection',(event,k)=>{
+    if(k=="f_crt"){
+      console.log("Inga vanchu")
+      mainWindow.loadURL(`file://${__dirname}/views/first.html`);
+      // var data=dialog.showOpenDialog(mainWindow,{properties:['openDirectory']});
+      // ipcMain.once('fileDialogReply',data);
+    }
+    else if(k=="m_crt"){
+      mainWindow.loadURL(`file://${__dirname}/views/second.html`);
+    }
+    else if(k=="r_mgr"){
+      mainWindow.loadURL(`file://${__dirname}/views/third.html`);
+    }
+    else if(k=="p_mgr"){
+      mainWindow.loadURL(`file://${__dirname}/views/fourth.html`);
+    }
+    else if(k=="Details"){
+      mainWindow.loadURL(`file://${__dirname}/views/details.html`);
+    }
+   
+  });
+
 
 app.on("window-all-closed", function() {
   if (process.platform !== "darwin") {
