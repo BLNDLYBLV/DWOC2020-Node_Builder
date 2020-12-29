@@ -22,7 +22,7 @@ function createWindow() {
       nodeIntegration: true
     }
   });
-  mainWindow.loadURL(`file://${__dirname}/views/first.html`);
+  mainWindow.loadURL(`file://${__dirname}/views/index.html`);
   mainWindow.webContents.openDevTools();
   mainWindow.on("close", () => {
     mainWindow.webContents.send("stop-server");
@@ -57,7 +57,6 @@ app.on("browser-window-created", function(e, window) {
 
 ipcMain.on('redirection',(event,k)=>{
     if(k=="f_crt"){
-      console.log("Inga vanchu")
       mainWindow.loadURL(`file://${__dirname}/views/first.html`);
       // var data=dialog.showOpenDialog(mainWindow,{properties:['openDirectory']});
       // ipcMain.once('fileDialogReply',data);
