@@ -22,7 +22,7 @@ function createWindow() {
       nodeIntegration: true
     }
   });
-  mainWindow.loadURL(`file://${__dirname}/views/index.html`);
+  mainWindow.loadURL(`file://${__dirname}/views/first.html`);
   mainWindow.webContents.openDevTools();
   mainWindow.on("close", () => {
     mainWindow.webContents.send("stop-server");
